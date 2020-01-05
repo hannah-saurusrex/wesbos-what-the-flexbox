@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+// const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 
 // compile scss into css
@@ -13,6 +14,13 @@ function style() {
     // 4. stream changes to all browsers via browsersync :)
     .pipe(browserSync.stream())
 }
+
+// attempt at adding autoprefixer
+// gulp.task('styles', function() {
+//     gulp.src('app/**/.css')
+//     .pipe(autoprefixer())
+//     .pipe(gulp.dest('build'))
+// });
 
 // watch task; watches specific files and automatically updates browsers for us!
 function watch() {
